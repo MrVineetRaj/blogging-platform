@@ -7,7 +7,7 @@ const MostRecent = () => {
         const { title, sub_title, created_at } = blog;
 
         return (
-          <div className="">
+          <div className="" key={index}>
             <h2>{title}</h2>
           </div>
         );
