@@ -27,7 +27,7 @@ const Navbar = () => {
         </span>
         <span>
           <button
-            className=" border-2 p-2 rounded-xl border-blue-500 px-4 py-2"
+            className="hidden sm:block border-2 p-2 rounded-xl border-blue-500 px-4 py-2"
             onClick={() => {
               router.push("/create");
             }}

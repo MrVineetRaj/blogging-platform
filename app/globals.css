@@ -18,22 +18,25 @@ h1 {
 h2 {
   @apply text-xl font-bold;
 }
+.markdown-content {
+  width: 300px;
+}
 
 /* Custom styles for markdown content */
 .markdown-content h1 {
-  @apply text-3xl font-bold my-4;
+  @apply sm:text-3xl text-2xl font-bold my-4;
 }
 
 .markdown-content h2 {
-  @apply text-2xl font-semibold my-3;
+  @apply sm:text-2xl text-xl font-semibold my-3;
 }
 
 .markdown-content h3 {
-  @apply text-xl font-semibold my-2;
+  @apply sm:text-xl text-lg font-semibold my-2;
 }
 
 .markdown-content p {
-  @apply text-base leading-relaxed my-2;
+  @apply text-sm sm:text-base leading-relaxed my-2;
 }
 
 .markdown-content ul {
@@ -45,19 +48,18 @@ h2 {
 }
 
 .markdown-content li {
-  @apply my-1;
+  @apply text-sm sm:text-base my-1;
+}
+.markdown-content code {
+  @apply p-1 text-gray-100 bg-gray-800 rounded text-xs sm:text-sm font-mono;
 }
 
 .markdown-content blockquote {
-  @apply border-l-4 border-gray-300 pl-4 italic my-4 text-gray-600;
+  @apply border-l-4  border-gray-300 pl-4 italic my-4 text-gray-600;
 }
 
 .markdown-content pre {
-  @apply bg-gray-100 p-4 rounded my-4 overflow-x-auto;
-}
-
-.markdown-content code {
-  @apply bg-gray-200 p-1 rounded text-sm font-mono;
+  @apply bg-gray-800 max-w-[90%]  p-4 rounded my-4 overflow-x-scroll;
 }
 
 .markdown-content hr {

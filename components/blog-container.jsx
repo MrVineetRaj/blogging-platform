@@ -32,7 +32,7 @@ const BlogContainer = ({ blog_id }) => {
   }
 
   return (
-    <div className="sm:min-w-[100%]">
+    <div className="max-w-[300px] sm:max-w-[100%] sm:min-w-[100%]">
       {/* Banner Section */}
       <div
         className="min-w-full min-h-48 flex flex-col items-center sm:px-72 pt-8 px-4"
@@ -41,27 +41,23 @@ const BlogContainer = ({ blog_id }) => {
         <h1 className="w-full text-white text-3xl font-bold">
           {blogContent?.blog?.title}
         </h1>
-        <h2 className="w-full text-gray-200 text-xl">
+        <p className="w-full text-gray-200 text-sm">
           {blogContent?.blog?.sub_title}
-        </h2>
+        </p>
         <p className="w-full text-gray-200 text-sm">
           {formateDate(blogContent?.blog?.created_at)}
         </p>
       </div>
 
       {/* Content Section */}
-      <div className="min-w-full min-h-48 flex flex-col items-center px-2 sm:px-72 pt-8">
-        <div className="bg-white border shadow-lg mb-8 -mt-20 w-full min-h-[600px] px-4 sm:p-6">
+      <div className="min-w-full min-h-48 flex flex-col items-center  sm:px-72">
+        <div className="bg-white border shadow-lg mb-8 -mt-8 sm:-mt-20 w-[100%] min-h-[600px] px-4 sm:p-6">
           {/* Ensure content is a string, fallback to empty string */}
-          <ReactMarkdown className="markdown-content">
+          <ReactMarkdown className="markdown-content w-[60%] sm:w-full ">
             {blogContent?.content || ""}
           </ReactMarkdown>
         </div>
       </div>
-
-      {/* <span className="fixed min-w-10 min-h-10 right-4 bottom-4 bg-gray-100 border-2 border-blue-500 rounded-full flex items-center justify-center">
-        {blogContent?.blog?.views}
-      </span> */}
     </div>
   );
 };
