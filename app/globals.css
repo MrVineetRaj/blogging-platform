@@ -2,20 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  align-items: center;
+}
+
+h1 {
+  @apply text-3xl font-bold;
+}
+
+h2 {
+  @apply text-xl font-bold;
+}
+
+/* Custom styles for markdown content */
+.markdown-content h1 {
+  @apply text-3xl font-bold my-4;
+}
+
+.markdown-content h2 {
+  @apply text-2xl font-semibold my-3;
+}
+
+.markdown-content h3 {
+  @apply text-xl font-semibold my-2;
+}
+
+.markdown-content p {
+  @apply text-base leading-relaxed my-2;
+}
+
+.markdown-content ul {
+  @apply list-disc list-inside my-2;
+}
+
+.markdown-content ol {
+  @apply list-decimal list-inside my-2;
+}
+
+.markdown-content li {
+  @apply my-1;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic my-4 text-gray-600;
+}
+
+.markdown-content pre {
+  @apply bg-gray-100 p-4 rounded my-4 overflow-x-auto;
+}
+
+.markdown-content code {
+  @apply bg-gray-200 p-1 rounded text-sm font-mono;
+}
+
+.markdown-content hr {
+  @apply my-8;
 }
