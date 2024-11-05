@@ -3,9 +3,9 @@ import BlogCard from "@/components/blog-card";
 import LoadingBlogCard from "@/components/loading/loading-blog-card";
 import { getBlogs } from "@/lib/api/blogs";
 import { useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
-const SearchPage = () => {
+const SearchBlogPage = () => {
   const [blogs, setBlogs] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -38,4 +38,9 @@ const SearchPage = () => {
   );
 };
 
+const SearchPage = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <SearchBlogPage />
+  </Suspense>
+);
 export default SearchPage;
